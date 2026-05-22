@@ -30,8 +30,8 @@ app.use(cors({
     
     const isAllowed = allowedOrigins.some(allowed => {
       if (allowed === origin) return true;
-      // Allow railway and vercel domains
-      if (origin.endsWith('.railway.app') || origin.endsWith('.vercel.app')) return true;
+      // Allow vercel preview URLs if it's a vercel setup
+      if (allowed && allowed.includes('vercel.app') && origin.endsWith('.vercel.app')) return true;
       return false;
     });
 
