@@ -16,10 +16,10 @@ const app = express();
 
 // Middleware
 app.use(helmet());
-
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
+  'https://team-task-manager-blue-zeta.vercel.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
